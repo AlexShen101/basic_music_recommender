@@ -51,10 +51,9 @@ class ArtistRetriever:
         """
         Return the artist ID from the artist name.
         """
-        # Filter the DataFrame for the artist_name, and get the index (id)
         artist_ids = self._artists_df[self._artists_df['name'] == artist_name].index
         if not artist_ids.empty:
-            return artist_ids[0]  # Return the first matching artist ID
+            return artist_ids[0]
         else:
             raise ValueError(f"Artist name '{artist_name}' not found.")
 
